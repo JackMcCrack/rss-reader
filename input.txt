@@ -1,0 +1,13 @@
+http://hackaday.com/feed/
+http://www.spiegel.de/schlagzeilen/index.rss
+http://www.heise.de/tp/rss/news-xl.rdf
+http://www.heise.de/newsticker/heise.rdf
+http://rss.golem.de/rss.php?feed=RSS2.0
+http://ticker.gulli.com/rss/
+https://events.ccc.de/feed/
+http://rss.slashdot.org/Slashdot/slashdot
+http://www.theguardian.com/uk/technology/rss
+http://www.ka-news.de/storage/rss/rss/karlsruhe.xml
+http://newsfeed.zeit.de/index
+http://www.faz.net/rss/aktuell/
+http://www.taz.de/!p4608;rss/
