@@ -27,7 +27,7 @@ class Feed (threading.Thread):
 feeds = []
 articles = []
 output = []
-f = open('./input.txt', 'r')
+f = open('input.txt', 'r')
 
 
 for line in f:
