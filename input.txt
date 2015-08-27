@@ -1,18 +1,48 @@
-http://feeds.arstechnica.com/arstechnica/everything
-http://futurezone.at/xml/rss
-http://hackaday.com/feed/
-http://www.spiegel.de/schlagzeilen/index.rss
-http://www.heise.de/tp/rss/news-xl.rdf
-http://www.heise.de/newsticker/heise.rdf
-http://rss.golem.de/rss.php?feed=RSS2.0
-http://ticker.gulli.com/rss/
-https://events.ccc.de/feed/
-http://rss.slashdot.org/Slashdot/slashdot
-http://www.theguardian.com/uk/technology/rss
-http://www.ka-news.de/storage/rss/rss/karlsruhe.xml
-http://www.faz.net/rss/aktuell/
-http://www.taz.de/!p4608;rss/
-https://netzpolitik.org/feed
-http://suche.sueddeutsche.de/?output=rss
-http://www.nzz.ch/startseite.rss
-http://www.presseportal.de/rss/dienststelle_110972.rss2
+#
+#icon name url
+arstech	arstechnica.com	http://feeds.arstechnica.com/arstechnica/everything
+fz	futurezone.at	http://futurezone.at/xml/rss
+hackaday	hackaday.com	http://hackaday.com/feed/
+spon	spiegel.de	http://www.spiegel.de/politik/index.rss
+spon	spiegel.de	http://www.spiegel.de/wirtschaft/index.rss
+spon	spiegel.de	http://www.spiegel.de/panorama/index.rss
+spon	spiegel.de	http://www.spiegel.de/netzwelt/index.rss
+spon	spiegel.de	http://www.spiegel.de/wissenschaft/index.rss
+tp	telepolis	http://www.heise.de/tp/rss/news-xl.rdf
+heise	heise.de	http://www.heise.de/newsticker/heise.rdf
+heise	heise.de	http://www.heise.de/security/news/news-atom.xml
+golem	golem.de	http://rss.golem.de/rss.php?feed=RSS2.0
+gulli	gulli.com	http://ticker.gulli.com/rss/
+ccc	events.ccc.de	http://events.ccc.de/feed/
+slashdot	slashdot.org	http://rss.slashdot.org/Slashdot/slashdot
+guardian	theguardian.com	http://www.theguardian.com/uk/technology/rss
+ka-news	ka-news.de	http://www.ka-news.de/storage/rss/rss/karlsruhe.xml
+faz	faz.net	http://www.faz.net/rss/aktuell/politik/
+faz	faz.net	http://www.faz.net/rss/aktuell/wirtschaft/
+faz	faz.net	http://www.faz.net/rss/aktuell/wissen/
+#taz	taz.de	http://www.taz.de/!p4615;rss/
+#taz	taz.de	http://www.taz.de/!p4610;rss/
+netzpolitik	netzpolitik.org	https://netzpolitik.org/feed
+sz	sueddeutsche.de	http://rss.sueddeutsche.de/rss/Eilmeldungen
+sz	sueddeutsche.de	http://rss.sueddeutsche.de/rss/Politik
+sz	sueddeutsche.de	http://rss.sueddeutsche.de/rss/Wirtschaft
+sz	sueddeutsche.de	http://rss.sueddeutsche.de/rss/Digital
+sz	sueddeutsche.de	http://suche.sueddeutsche.de/rss/Wissen
+jetzt	jetzt	http://jetzt.sueddeutsche.de/rssgesamt
+nzz	nzz.ch	http://www.nzz.ch/international.rss
+nzz	nzz.ch	http://www.nzz.ch/schweiz.rss
+nzz	nzz.ch	http://www.nzz.ch/wirtschaft.rss
+nzz	nzz.ch	http://www.nzz.ch/wissenschaft.rss
+nzz	nzz.ch	http://www.nzz.ch/mehr/digital.rss
+polizeibw	Polizei-KA	http://www.presseportal.de/rss/dienststelle_110972.rss2
+derstandard	derstandard.at	http://derstandard.at/?page=rss
+feed	googleprojectzero	http://googleprojectzero.blogspot.com/feeds/posts/default?alt=rss
+karlsruhe	karlsruhe.de	http://presse.karlsruhe.de/db/meldungen/rss
+feed	edri.org	https://edri.org/feed/
+nachdenkseiten	nachdenkseiten.de	http://www.nachdenkseiten.de/?feed=rss2
+kvv	kvv.de	http://www.kvv.de/ticker_rss.xml
+feed	bgpmon.net	http://www.bgpmon.net/feed/
+feed	offenenetze.de	http://www.offenenetze.de/feed/
+feed	googleblog	https://feeds.feedburner.com/blogspot/MKuf?format=rss2
+feed	hacker-news	https://news.ycombinator.com/rss
+zeit	zeit.de	http://newsfeed.zeit.de/index

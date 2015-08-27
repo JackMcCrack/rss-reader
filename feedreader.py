@@ -23,29 +23,41 @@ class Feed (threading.Thread):
 			print("{:.3f}".format(self.diff) + " s\t" + self.url)
 		articles.append(self.d)
 		
+def iconbyurl(config, url=None):
+	if url:
+		get = (config for config in config if (config[2] == url))
+		for x in get:
+			return x[0]
 
-feeds = []
-articles = []
-output = []
-f = open('./input.txt', 'r')
+feeds = []	#for each rss-feed one threade
+config = []	#keeps config from input.txt
+articles = []	#all articles from all feeds
+output = []	#just pubished, title, link, feedurl
 
 
+f = open('/home/jack/RSS-Reader/input.txt', 'r')
 for line in f:
-	feed = Feed(line.strip())
-	feeds.append(feed)
+	if not line.strip().startswith("#"):
+		(icon, name, url) = line.split(None, 2)
+		config.append((icon, name, url.strip()))
+		feed = Feed(url.strip())
+		feeds.append(feed)
 f.close()
+if DEBUG:
+	print(config)
 
 for x in feeds:
-	x.start()
+	x.start()	#gather rss feed in a thread
 
 for x in feeds:
-	x.join()
+	x.join()	#wait for of all threads to finish
 for post in articles:
 	for x in post.entries:
-		output.append((x.id, x.published_parsed, x.title, x.link))	
-output = sorted(output, key=itemgetter(1), reverse=True)
+		if hasattr(x, 'published_parsed') and hasattr(x, 'title_detail'):
+			output.append((x.published_parsed, x.title, x.link, iconbyurl(config, x.title_detail.base)))
+output = sorted(output, key=itemgetter(0), reverse=True)
 
-
-html_output.header()
+html_output.header(config)
+html_output.selectionbox(config)
 html_output.unnumberedlist(output)
 html_output.footer()
