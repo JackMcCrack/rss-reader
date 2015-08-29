@@ -54,7 +54,7 @@ for x in feeds:
 for post in articles:
 	for x in post.entries:
 		if hasattr(x, 'published_parsed') and hasattr(x, 'title_detail'):
-			output.append((x.published_parsed, x.title, x.link, iconbyurl(config, x.title_detail.base)))
+			output.append((x.published_parsed, x.title, x.link, iconbyurl(config, x.title_detail.base), x.title_detail.base))
 output = sorted(output, key=itemgetter(0), reverse=True)
 
 html_output.header(config)

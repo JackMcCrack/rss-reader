@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from operator import itemgetter
-
+import hashlib
 
 def header(icons=None):
 	print("<!doctype html>")
@@ -22,7 +22,7 @@ def header(icons=None):
 	print(".selection {float: right; width: 300px; position: fixed; left: auto; right: 0px; top: 0px;}")
 	print("div.selection {display: none;}")
 	print(".selection div.icon {float: left; margin: 0px 3px 0px 0px;}")
-	print(".selection li div:not(.icon) {text-decoration: underline;}")
+	print(".selection input {float: left; margin: 0px 0px 0px 0px;}")
 	print(".hidden {display: none;}")
 	print("</style>")
 	print("<script src='/jquery-2.1.4.min.js'></script>")
@@ -31,7 +31,7 @@ def header(icons=None):
 	print("$(document).ready(function(){")
 	print("  $('.timestamp').each(function (idx, elem) {jQuery(elem).text(jQuery.format.toBrowserTimeZone(jQuery(elem).text(), 'dd.MM.yyyy HH:mm:ss'))});")
 	print("  $('div.selection').show()")
-	print("  $('div.selection li.feed div').click(function(e,ui){var foo=$(this).attr('class'); $('li.'+foo).toggleClass('hidden') })")
+	print("  $('div.selection li.select input[type=checkbox]').click(function(e,ui){var foo=$(this).attr('name'); $('li.'+foo).toggleClass('hidden') })")
 	print("});")
 	print("</script>")
 	print("</head>")
@@ -41,9 +41,10 @@ def header(icons=None):
 def selectionbox(config):
         print("<div class='selection'>")
         print("<ul>")
-	tmp = list(set(map(itemgetter(0,1), config)))
+	tmp = list(set(map(itemgetter(0,1,2), config)))
+	tmp = sorted(tmp, key=itemgetter(2))
 	for i in tmp:
-		print("  <li class='feed'><div class='icon %s'></div><div class='%s'>%s</div></li>" %( i[0], i[0], i[1] ))
+		print("  <li class='select'><input type='checkbox' name='%s' checked></input><div class='icon %s'></div><div class='%s'>%s</div></li>" %( hashlib.md5(i[2]).hexdigest(), i[0], i[0], i[1] ))
         print("</ul>")
         print("</div>")
 
@@ -59,7 +60,7 @@ def unnumberedlist(outputlist):
 			elif last[0:4] != current[0:4]:
 				print("</ul><ul>")
 				
-		print("<li class='%s'><div class='timestamp'>%04d-%02d-%02dT%02d:%02d:%02dZ</div> <div class='icon %s'></div> <a href='%s'>%s</a></li>" % (i[3], i[0].tm_year,i[0].tm_mon, i[0].tm_mday, i[0].tm_hour, i[0].tm_min, i[0].tm_sec, i[3], i[2],i[1])).encode('utf-8')
+		print("<li class='%s'><div class='timestamp'>%04d-%02d-%02dT%02d:%02d:%02dZ</div> <div class='icon %s'></div> <a href='%s'>%s</a></li>" % (hashlib.md5(i[4]).hexdigest(), i[0].tm_year,i[0].tm_mon, i[0].tm_mday, i[0].tm_hour, i[0].tm_min, i[0].tm_sec, i[3], i[2],i[1])).encode('utf-8')
 		last = ((i[0].tm_year, i[0].tm_mon, i[0].tm_mday, i[0].tm_hour, i[0].tm_min, i[0].tm_sec))
 	print("</ul></div>")
 
