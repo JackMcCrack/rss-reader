@@ -20,7 +20,7 @@ def header(icons=None):
 	print("li a:hover:before, li a:focus:before, li a:active:before {left: 0px; right: 0px;}")
 	print(".debug {display: none;}")
 	print(".selection {float: right; width: 300px; position: fixed; left: auto; right: 0px; top: 0px;}")
-	print("div.selection {display: none;}")
+	print("div.selection {display: none; font-size: smaller;}")
 	print(".selection div.icon {float: left; margin: 0px 3px 0px 0px;}")
 	print(".selection input {float: left; margin: 0px 0px 0px 0px;}")
 	print(".hidden {display: none;}")
