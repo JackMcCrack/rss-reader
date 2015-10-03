@@ -6,7 +6,6 @@ import threading
 import html_output
 from operator import itemgetter
 
-DEBUG = False
 class Feed(threading.Thread):
     def __init__(self, url):
         threading.Thread.__init__(self)
@@ -19,7 +18,8 @@ class Feed(threading.Thread):
         self.d = feedparser.parse(self.url)
         self.end = time.time()
         self.diff = self.end - self.start
-        if DEBUG:
+
+        if __debug__:
             print("{:.3f}".format(self.diff) + " s\t" + self.url)
         articles.append(self.d)
 
@@ -42,7 +42,7 @@ with open('/home/jack/RSS-Reader/input.txt', 'r') as f:
             feed = Feed(url.strip())
             feeds.append(feed)
 
-if DEBUG:
+if __debug__:
     print(config)
 
 for x in feeds:
