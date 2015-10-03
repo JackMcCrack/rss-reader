@@ -34,15 +34,14 @@ config = []	#keeps config from input.txt
 articles = []	#all articles from all feeds
 output = []	#just pubished, title, link, feedurl
 
+with open('/home/jack/RSS-Reader/input.txt', 'r') as f:
+	for line in f:
+		if not line.strip().startswith("#"):
+			(icon, name, url) = line.split(None, 2)
+			config.append((icon, name, url.strip()))
+			feed = Feed(url.strip())
+			feeds.append(feed)
 
-f = open('/home/jack/RSS-Reader/input.txt', 'r')
-for line in f:
-	if not line.strip().startswith("#"):
-		(icon, name, url) = line.split(None, 2)
-		config.append((icon, name, url.strip()))
-		feed = Feed(url.strip())
-		feeds.append(feed)
-f.close()
 if DEBUG:
 	print(config)
 
