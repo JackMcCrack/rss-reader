@@ -7,7 +7,7 @@ def header(icons=None):
     print("<html lang='en'>")
     print("<head>")
     print("<meta charset='utf-8'>")
-    print("<link rel="stylesheet" href='rss-reader.css'>")
+    print("<link rel='stylesheet' href='rss-reader.css'>")
     print("<style type='text/css'>")
     for i in list(set(map(itemgetter(0), icons))):
         print("div.icon.%s {background-image: url('./favicon/%s.ico');}" % (i, i))
